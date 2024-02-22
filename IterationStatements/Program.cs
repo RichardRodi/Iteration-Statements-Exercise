@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace IterationStatements
 {
@@ -81,11 +82,11 @@ namespace IterationStatements
         {
             if (f >= 18)
                 {
-                Console.WriteLine("You are old enough to vote"); 
+                Console.WriteLine("You are old enough to vote\n"); 
                 }
             else 
             {
-                Console.WriteLine("You are not old enough to vote");
+                Console.WriteLine("You are not old enough to vote\n");
                     
             }
         }
@@ -96,10 +97,34 @@ namespace IterationStatements
 
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
+        public static void CheckIntRange(int g)
+        {
+            if (g > -10 && g < 10)
+
+        {
+                Console.WriteLine("Number is in Range\n");
+
+        }   else 
+
+            {
+                Console.WriteLine("Number is not in Range\n");
+            }
+            
+        }
+
 
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
-
-
+        public static void MutiplicationTable(int j)
+        {
+            for (int i = 1; i<= 12; i++)
+            {
+                Console.WriteLine("{0} * {1} = {2}", j, i, (j * i));
+            }
+                    
+                    
+        }
+       
+        
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
@@ -126,10 +151,15 @@ namespace IterationStatements
             var answer5 = Int32.Parse(Console.ReadLine());
             AgeChecker(answer5);
 
+            Console.WriteLine("Is your number in the range between -10 & 10, Enter Number:");
+            var answer6 = Int32.Parse(Console.ReadLine());
+            CheckIntRange(answer6);
+
+            Console.WriteLine("Enter Number to see multiplication table:");
+            var answer7 = Int32.Parse(Console.ReadLine());
+            MutiplicationTable(answer7);
 
 
-
-
-        }
+            }
     }
 }
